@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <ScrollView android:layout_width="fill_parent" android:id="@+id/scrollView1" android:layout_height="fill_parent" android:orientation="vertical">
+        <TableLayout android:layout_width="fill_parent" android:id="@+id/tableLayout1" android:layout_height="fill_parent">
+            <TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageButton android:src="@drawable/taka" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/taka" android:background="@null"></ImageButton>
+                <ImageButton android:src="@drawable/kujaku" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/kujaku" android:background="@null"></ImageButton>
+                <ImageButton android:src="@drawable/kondoru" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/kondoru" android:background="@null"></ImageButton>
+            </TableRow>
+            <TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageButton android:src="@drawable/lion" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/lion" android:background="@null"></ImageButton>
+                <ImageButton android:src="@drawable/tora" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/tora" android:background="@null"></ImageButton>
+                <ImageButton android:src="@drawable/tita" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/tita" android:background="@null"></ImageButton>
+            </TableRow>
+            <TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageButton android:src="@drawable/kuwagata" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/kuwagata" android:background="@null"></ImageButton>
+                <ImageButton android:src="@drawable/kamakiri" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/kamakiri" android:background="@null"></ImageButton>
+                <ImageButton android:src="@drawable/bata" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/bata" android:background="@null"></ImageButton>
+            </TableRow>
+            <TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageButton android:src="@drawable/sai" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/sai" android:background="@null"></ImageButton>
+                <ImageButton android:src="@drawable/gorira" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/gorira" android:background="@null"></ImageButton>
+                <ImageButton android:src="@drawable/zou" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/zou" android:background="@null"></ImageButton>
+            </TableRow>
+            <TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageButton android:src="@drawable/sixyati" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/sixyati" android:background="@null"></ImageButton>
+                <ImageButton android:src="@drawable/unagi" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/unagi" android:background="@null"></ImageButton>
+                <ImageButton android:src="@drawable/tako" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/tako" android:background="@null"></ImageButton>
+            </TableRow>
+            <TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            	<TextView android:text="" android:id="@+id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+                <ImageButton android:src="@drawable/scana" android:layout_height="wrap_content" android:layout_width="fill_parent" android:id="@+id/taiki" android:background="@null"></ImageButton>
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+</LinearLayout>
