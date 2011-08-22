@@ -9,9 +9,9 @@ import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
+@SuppressWarnings("deprecation")
 public class mainActivity extends Activity implements SensorListener{
 	
 	
@@ -25,7 +25,7 @@ public class mainActivity extends Activity implements SensorListener{
 	private MediaPlayer taiki;
 	private MediaPlayer kidou;
 	
-	private MediaPlayer Medaru[] = new MediaPlayer[15];
+	private MediaPlayer Medaru[] = new MediaPlayer[18];
 	
 	private MediaPlayer hensin;
 	
@@ -76,6 +76,9 @@ public class mainActivity extends Activity implements SensorListener{
         Medaru[12] = MediaPlayer.create(this, R.raw.sixyati);
         Medaru[13] = MediaPlayer.create(this, R.raw.unagi);
         Medaru[14] = MediaPlayer.create(this, R.raw.tako);
+        Medaru[15] = MediaPlayer.create(this, R.raw.putera);
+        Medaru[16] = MediaPlayer.create(this, R.raw.torikera);
+        Medaru[17] = MediaPlayer.create(this, R.raw.tirano);
         
         
         
@@ -91,68 +94,21 @@ public class mainActivity extends Activity implements SensorListener{
         
         ImageButton takabutton = (ImageButton) findViewById(R.id.taka);
         takabutton.setOnClickListener(new View.OnClickListener() {
-        	public void onClick(View view) { 
-        		if (Medaru[0].isPlaying()) {
-        	        Medaru[0].pause();
-        	      } else {
-        	    	if(Medaru[1].isPlaying()) {
-        	    		Medaru[1].pause();
-        	    	}
-        	    	if(Medaru[2].isPlaying()) {
-        	    		Medaru[2].pause();
-        	    	}
-        	    	if(Medaru[3].isPlaying()) {
-        	    		Medaru[3].pause();
-        	    	}
-        	    	if(Medaru[4].isPlaying()) {
-        				Medaru[4].pause();
-        	    	}
-        	    	if(Medaru[5].isPlaying()) {
-        				Medaru[5].pause();
-        	    	}
-        	    	if(Medaru[6].isPlaying()) {
-        				Medaru[6].pause();
-        	    	}
-        	    	if(Medaru[7].isPlaying()) {
-        				Medaru[7].pause();
-        	    	}
-        	    	if(Medaru[8].isPlaying()) {
-        				Medaru[8].pause();
-        	    	}
-        	    	if(Medaru[9].isPlaying()) {
-        				Medaru[9].pause();
-        	    	}
-        	    	if(Medaru[10].isPlaying()) {
-        				Medaru[10].pause();
-        	    	}
-        	    	if(Medaru[11].isPlaying()) {
-        				Medaru[11].pause();
-        	    	}
-        	    	if(Medaru[12].isPlaying()) {
-        				Medaru[12].pause();
-        	    	}
-        	    	if(Medaru[13].isPlaying()) {
-        				Medaru[13].pause();
-        	    	}
-        	    	if(Medaru[14].isPlaying()) {
-        				Medaru[14].pause();
-        	    	}
-        	    	if(taiki.isPlaying()) {
-        	    		taiki.pause();
-        	    	}
-        	    	Medaru[0].seekTo(0);
-        	    	Medaru[0].start();
-        	    	
-        	    	if(sentaku < 3) {
-        	    		sentakumedaru[sentaku] = 0;
-        	    		sentaku++;
-        	    	}else {
-        	    		sentakumedaru[0] = sentakumedaru[1];
-        	    		sentakumedaru[1] = sentakumedaru[2];
-        	    		sentakumedaru[2] = 0;
-        	    	}
-        	    	
-        	      }
+        	public void onClick(View view) {
+    	    	if(taiki.isPlaying()) {
+    	    		taiki.pause();
+    	    	}
+    	    	Medaru[0].seekTo(0);
+    	    	Medaru[0].start();
+    	    	
+    	    	if(sentaku < 3) {
+    	    		sentakumedaru[sentaku] = 0;
+    	    		sentaku++;
+    	    	}else {
+    	    		sentakumedaru[0] = sentakumedaru[1];
+    	    		sentakumedaru[1] = sentakumedaru[2];
+    	    		sentakumedaru[2] = 0;
+    	    	}
         	}
         });
         
@@ -160,67 +116,20 @@ public class mainActivity extends Activity implements SensorListener{
         ImageButton kujakubutton = (ImageButton) findViewById(R.id.kujaku);
         kujakubutton.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) { 
-        		if (Medaru[1].isPlaying()) {
-        			Medaru[1].pause();
-        	      } else {
-        	    	if(Medaru[0].isPlaying()) {
-        	    		Medaru[0].pause();
-        	    	}
-        	    	if(Medaru[2].isPlaying()) {
-        	    		Medaru[2].pause();
-        	    	}
-        	    	if(Medaru[3].isPlaying()) {
-        	    		Medaru[3].pause();
-        	    	}
-        	    	if(Medaru[4].isPlaying()) {
-        	    		Medaru[4].pause();
-        	    	}
-        	    	if(Medaru[5].isPlaying()) {
-        				Medaru[5].pause();
-        	    	}
-        	    	if(Medaru[6].isPlaying()) {
-        				Medaru[6].pause();
-        	    	}
-        	    	if(Medaru[7].isPlaying()) {
-        				Medaru[7].pause();
-        	    	}
-        	    	if(Medaru[8].isPlaying()) {
-        				Medaru[8].pause();
-        	    	}
-        	    	if(Medaru[9].isPlaying()) {
-        				Medaru[9].pause();
-        	    	}
-        	    	if(Medaru[10].isPlaying()) {
-        				Medaru[10].pause();
-        	    	}
-        	    	if(Medaru[11].isPlaying()) {
-        				Medaru[11].pause();
-        	    	}
-        	    	if(Medaru[12].isPlaying()) {
-        				Medaru[12].pause();
-        	    	}
-        	    	if(Medaru[13].isPlaying()) {
-        				Medaru[13].pause();
-        	    	}
-        	    	if(Medaru[14].isPlaying()) {
-        				Medaru[14].pause();
-        	    	}
-        	    	if(taiki.isPlaying()) {
-        	    		taiki.pause();
-        	    	}
-        	    	Medaru[1].seekTo(0);
-        	    	Medaru[1].start();
-        	    	
-        	    	if(sentaku < 3) {
-        	    		sentakumedaru[sentaku] = 1;
-        	    		sentaku++;
-        	    	}else {
-        	    		sentakumedaru[0] = sentakumedaru[1];
-        	    		sentakumedaru[1] = sentakumedaru[2];
-        	    		sentakumedaru[2] = 1;
-        	    	}
-        	    	
-        	      }
+    	    	if(taiki.isPlaying()) {
+    	    		taiki.pause();
+    	    	}
+    	    	Medaru[1].seekTo(0);
+    	    	Medaru[1].start();
+    	    	
+    	    	if(sentaku < 3) {
+    	    		sentakumedaru[sentaku] = 1;
+    	    		sentaku++;
+    	    	}else {
+    	    		sentakumedaru[0] = sentakumedaru[1];
+    	    		sentakumedaru[1] = sentakumedaru[2];
+    	    		sentakumedaru[2] = 1;
+    	    	}
         	}
         });
         
@@ -228,67 +137,20 @@ public class mainActivity extends Activity implements SensorListener{
         ImageButton kondorubutton = (ImageButton) findViewById(R.id.kondoru);
         kondorubutton.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) { 
-        		if (Medaru[2].isPlaying()) {
-        			Medaru[2].pause();
-        	      } else {
-        	    	if(Medaru[0].isPlaying()) {
-        	    		Medaru[0].pause();
-        	    	}
-        	    	if(Medaru[1].isPlaying()) {
-        	    		Medaru[1].pause();
-        	    	}
-        	    	if(Medaru[3].isPlaying()) {
-        	    		Medaru[3].pause();
-        	    	}
-        	    	if(Medaru[4].isPlaying()) {
-        	    		Medaru[4].pause();
-        	    	}
-        	    	if(Medaru[5].isPlaying()) {
-        				Medaru[5].pause();
-        	    	}
-        	    	if(Medaru[6].isPlaying()) {
-        				Medaru[6].pause();
-        	    	}
-        	    	if(Medaru[7].isPlaying()) {
-        				Medaru[7].pause();
-        	    	}
-        	    	if(Medaru[8].isPlaying()) {
-        				Medaru[8].pause();
-        	    	}
-        	    	if(Medaru[9].isPlaying()) {
-        				Medaru[9].pause();
-        	    	}
-        	    	if(Medaru[10].isPlaying()) {
-        				Medaru[10].pause();
-        	    	}
-        	    	if(Medaru[11].isPlaying()) {
-        				Medaru[11].pause();
-        	    	}
-        	    	if(Medaru[12].isPlaying()) {
-        				Medaru[12].pause();
-        	    	}
-        	    	if(Medaru[13].isPlaying()) {
-        				Medaru[13].pause();
-        	    	}
-        	    	if(Medaru[14].isPlaying()) {
-        				Medaru[14].pause();
-        	    	}
-        	    	if(taiki.isPlaying()) {
-        	    		taiki.pause();
-        	    	}
-        	    	Medaru[2].seekTo(0);
-        	    	Medaru[2].start();
-        	    	
-        	    	if(sentaku < 3) {
-        	    		sentakumedaru[sentaku] = 2;
-        	    		sentaku++;
-        	    	}else {
-        	    		sentakumedaru[0] = sentakumedaru[1];
-        	    		sentakumedaru[1] = sentakumedaru[2];
-        	    		sentakumedaru[2] = 2;
-        	    	}
-        	    	
-        	      }
+    	    	if(taiki.isPlaying()) {
+    	    		taiki.pause();
+    	    	}
+    	    	Medaru[2].seekTo(0);
+    	    	Medaru[2].start();
+    	    	
+    	    	if(sentaku < 3) {
+    	    		sentakumedaru[sentaku] = 2;
+    	    		sentaku++;
+    	    	}else {
+    	    		sentakumedaru[0] = sentakumedaru[1];
+    	    		sentakumedaru[1] = sentakumedaru[2];
+    	    		sentakumedaru[2] = 2;
+    	    	}
         	}
         });
         
@@ -296,67 +158,20 @@ public class mainActivity extends Activity implements SensorListener{
         ImageButton lionbutton = (ImageButton) findViewById(R.id.lion);
         lionbutton.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) { 
-        		if (Medaru[3].isPlaying()) {
-        			Medaru[3].pause();
-        	      } else {
-        	    	if(Medaru[0].isPlaying()) {
-        	    		Medaru[0].pause();
-        	    	}
-        	    	if(Medaru[1].isPlaying()) {
-        	    		Medaru[1].pause();
-        	    	}
-        	    	if(Medaru[2].isPlaying()) {
-        	    		Medaru[2].pause();
-        	    	}
-        	    	if(Medaru[4].isPlaying()) {
-        	    		Medaru[4].pause();
-        	    	}
-        	    	if(Medaru[5].isPlaying()) {
-        				Medaru[5].pause();
-        	    	}
-        	    	if(Medaru[6].isPlaying()) {
-        				Medaru[6].pause();
-        	    	}
-        	    	if(Medaru[7].isPlaying()) {
-        				Medaru[7].pause();
-        	    	}
-        	    	if(Medaru[8].isPlaying()) {
-        				Medaru[8].pause();
-        	    	}
-        	    	if(Medaru[9].isPlaying()) {
-        				Medaru[9].pause();
-        	    	}
-        	    	if(Medaru[10].isPlaying()) {
-        				Medaru[10].pause();
-        	    	}
-        	    	if(Medaru[11].isPlaying()) {
-        				Medaru[11].pause();
-        	    	}
-        	    	if(Medaru[12].isPlaying()) {
-        				Medaru[12].pause();
-        	    	}
-        	    	if(Medaru[13].isPlaying()) {
-        				Medaru[13].pause();
-        	    	}
-        	    	if(Medaru[14].isPlaying()) {
-        				Medaru[14].pause();
-        	    	}
-        	    	if(taiki.isPlaying()) {
-        	    		taiki.pause();
-        	    	}
-        	    	Medaru[3].seekTo(0);
-        	    	Medaru[3].start();
-        	    	
-        	    	if(sentaku < 3) {
-        	    		sentakumedaru[sentaku] = 3;
-        	    		sentaku++;
-        	    	}else {
-        	    		sentakumedaru[0] = sentakumedaru[1];
-        	    		sentakumedaru[1] = sentakumedaru[2];
-        	    		sentakumedaru[2] = 3;
-        	    	}
-        	    	
-        	      }
+    	    	if(taiki.isPlaying()) {
+    	    		taiki.pause();
+    	    	}
+    	    	Medaru[3].seekTo(0);
+    	    	Medaru[3].start();
+    	    	
+    	    	if(sentaku < 3) {
+    	    		sentakumedaru[sentaku] = 3;
+    	    		sentaku++;
+    	    	}else {
+    	    		sentakumedaru[0] = sentakumedaru[1];
+    	    		sentakumedaru[1] = sentakumedaru[2];
+    	    		sentakumedaru[2] = 3;
+    	    	}
         	}
         });
         
@@ -364,67 +179,20 @@ public class mainActivity extends Activity implements SensorListener{
         ImageButton torabutton = (ImageButton) findViewById(R.id.tora);
         torabutton.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) { 
-        		if (Medaru[4].isPlaying()) {
-        			Medaru[4].pause();
-        	      } else {
-        	    	if(Medaru[0].isPlaying()) {
-        	    		Medaru[0].pause();
-        	    	}
-        	    	if(Medaru[1].isPlaying()) {
-        	    		Medaru[1].pause();
-        	    	}
-        	    	if(Medaru[2].isPlaying()) {
-        	    		Medaru[2].pause();
-        	    	}
-        	    	if(Medaru[3].isPlaying()) {
-        	    		Medaru[3].pause();
-        	    	}
-        	    	if(Medaru[5].isPlaying()) {
-        				Medaru[5].pause();
-        	    	}
-        	    	if(Medaru[6].isPlaying()) {
-        				Medaru[6].pause();
-        	    	}
-        	    	if(Medaru[7].isPlaying()) {
-        				Medaru[7].pause();
-        	    	}
-        	    	if(Medaru[8].isPlaying()) {
-        				Medaru[8].pause();
-        	    	}
-        	    	if(Medaru[9].isPlaying()) {
-        				Medaru[9].pause();
-        	    	}
-        	    	if(Medaru[10].isPlaying()) {
-        				Medaru[10].pause();
-        	    	}
-        	    	if(Medaru[11].isPlaying()) {
-        				Medaru[11].pause();
-        	    	}
-        	    	if(Medaru[12].isPlaying()) {
-        				Medaru[12].pause();
-        	    	}
-        	    	if(Medaru[13].isPlaying()) {
-        				Medaru[13].pause();
-        	    	}
-        	    	if(Medaru[14].isPlaying()) {
-        				Medaru[14].pause();
-        	    	}
-        	    	if(taiki.isPlaying()) {
-        	    		taiki.pause();
-        	    	}
-        	    	Medaru[4].seekTo(0);
-        	    	Medaru[4].start();
-        	    	
-        	    	if(sentaku < 3) {
-        	    		sentakumedaru[sentaku] = 4;
-        	    		sentaku++;
-        	    	}else {
-        	    		sentakumedaru[0] = sentakumedaru[1];
-        	    		sentakumedaru[1] = sentakumedaru[2];
-        	    		sentakumedaru[2] = 4;
-        	    	}
-        	    	
-        	      }
+    	    	if(taiki.isPlaying()) {
+    	    		taiki.pause();
+    	    	}
+    	    	Medaru[4].seekTo(0);
+    	    	Medaru[4].start();
+    	    	
+    	    	if(sentaku < 3) {
+    	    		sentakumedaru[sentaku] = 4;
+    	    		sentaku++;
+    	    	}else {
+    	    		sentakumedaru[0] = sentakumedaru[1];
+    	    		sentakumedaru[1] = sentakumedaru[2];
+    	    		sentakumedaru[2] = 4;
+    	    	}
         	}
         });
         
@@ -432,469 +200,140 @@ public class mainActivity extends Activity implements SensorListener{
         ImageButton titabutton = (ImageButton) findViewById(R.id.tita);
         titabutton.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) { 
-        		if (Medaru[5].isPlaying()) {
-        			Medaru[5].pause();
-        	      } else {
-        	    	if(Medaru[0].isPlaying()) {
-        	    		Medaru[0].pause();
-        	    	}
-        	    	if(Medaru[1].isPlaying()) {
-        	    		Medaru[1].pause();
-        	    	}
-        	    	if(Medaru[2].isPlaying()) {
-        	    		Medaru[2].pause();
-        	    	}
-        	    	if(Medaru[3].isPlaying()) {
-        	    		Medaru[3].pause();
-        	    	}
-        	    	if(Medaru[4].isPlaying()) {
-        				Medaru[4].pause();
-        	    	}
-        	    	if(Medaru[6].isPlaying()) {
-        				Medaru[6].pause();
-        	    	}
-        	    	if(Medaru[7].isPlaying()) {
-        				Medaru[7].pause();
-        	    	}
-        	    	if(Medaru[8].isPlaying()) {
-        				Medaru[8].pause();
-        	    	}
-        	    	if(Medaru[9].isPlaying()) {
-        				Medaru[9].pause();
-        	    	}
-        	    	if(Medaru[10].isPlaying()) {
-        				Medaru[10].pause();
-        	    	}
-        	    	if(Medaru[11].isPlaying()) {
-        				Medaru[11].pause();
-        	    	}
-        	    	if(Medaru[12].isPlaying()) {
-        				Medaru[12].pause();
-        	    	}
-        	    	if(Medaru[13].isPlaying()) {
-        				Medaru[13].pause();
-        	    	}
-        	    	if(Medaru[14].isPlaying()) {
-        				Medaru[14].pause();
-        	    	}
-        	    	if(taiki.isPlaying()) {
-        	    		taiki.pause();
-        	    	}
-        	    	Medaru[5].seekTo(0);
-        	    	Medaru[5].start();
-        	    	
-        	    	if(sentaku < 3) {
-        	    		sentakumedaru[sentaku] = 5;
-        	    		sentaku++;
-        	    	}else {
-        	    		sentakumedaru[0] = sentakumedaru[1];
-        	    		sentakumedaru[1] = sentakumedaru[2];
-        	    		sentakumedaru[2] = 5;
-        	    	}
-        	    	
-        	      }
+    	    	if(taiki.isPlaying()) {
+    	    		taiki.pause();
+    	    	}
+    	    	Medaru[5].seekTo(0);
+    	    	Medaru[5].start();
+    	    	
+    	    	if(sentaku < 3) {
+    	    		sentakumedaru[sentaku] = 5;
+    	    		sentaku++;
+    	    	}else {
+    	    		sentakumedaru[0] = sentakumedaru[1];
+    	    		sentakumedaru[1] = sentakumedaru[2];
+    	    		sentakumedaru[2] = 5;
+    	    	}
         	}
         });
         
         ImageButton kuwagatabutton = (ImageButton) findViewById(R.id.kuwagata);
         kuwagatabutton.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) { 
-        		if (Medaru[6].isPlaying()) {
-        			Medaru[6].pause();
-        	      } else {
-        	    	if(Medaru[0].isPlaying()) {
-        	    		Medaru[0].pause();
-        	    	}
-        	    	if(Medaru[1].isPlaying()) {
-        	    		Medaru[1].pause();
-        	    	}
-        	    	if(Medaru[2].isPlaying()) {
-        	    		Medaru[2].pause();
-        	    	}
-        	    	if(Medaru[3].isPlaying()) {
-        	    		Medaru[3].pause();
-        	    	}
-        	    	if(Medaru[4].isPlaying()) {
-        				Medaru[4].pause();
-        	    	}
-        	    	if(Medaru[5].isPlaying()) {
-        				Medaru[5].pause();
-        	    	}
-        	    	if(Medaru[7].isPlaying()) {
-        				Medaru[7].pause();
-        	    	}
-        	    	if(Medaru[8].isPlaying()) {
-        				Medaru[8].pause();
-        	    	}
-        	    	if(Medaru[9].isPlaying()) {
-        				Medaru[9].pause();
-        	    	}
-        	    	if(Medaru[10].isPlaying()) {
-        				Medaru[10].pause();
-        	    	}
-        	    	if(Medaru[11].isPlaying()) {
-        				Medaru[11].pause();
-        	    	}
-        	    	if(Medaru[12].isPlaying()) {
-        				Medaru[12].pause();
-        	    	}
-        	    	if(Medaru[13].isPlaying()) {
-        				Medaru[13].pause();
-        	    	}
-        	    	if(Medaru[14].isPlaying()) {
-        				Medaru[14].pause();
-        	    	}
-        	    	if(taiki.isPlaying()) {
-        	    		taiki.pause();
-        	    	}
-        	    	Medaru[6].seekTo(0);
-        	    	Medaru[6].start();
-        	    	
-        	    	if(sentaku < 3) {
-        	    		sentakumedaru[sentaku] = 6;
-        	    		sentaku++;
-        	    	}else {
-        	    		sentakumedaru[0] = sentakumedaru[1];
-        	    		sentakumedaru[1] = sentakumedaru[2];
-        	    		sentakumedaru[2] = 6;
-        	    	}
-        	    	
-        	      }
+    	    	if(taiki.isPlaying()) {
+    	    		taiki.pause();
+    	    	}
+    	    	Medaru[6].seekTo(0);
+    	    	Medaru[6].start();
+    	    	
+    	    	if(sentaku < 3) {
+    	    		sentakumedaru[sentaku] = 6;
+    	    		sentaku++;
+    	    	}else {
+    	    		sentakumedaru[0] = sentakumedaru[1];
+    	    		sentakumedaru[1] = sentakumedaru[2];
+    	    		sentakumedaru[2] = 6;
+    	    	}
         	}
         });
         
         ImageButton kamakiributton = (ImageButton) findViewById(R.id.kamakiri);
         kamakiributton.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) { 
-        		if (Medaru[7].isPlaying()) {
-        			Medaru[7].pause();
-        	      } else {
-        	    	if(Medaru[0].isPlaying()) {
-        	    		Medaru[0].pause();
-        	    	}
-        	    	if(Medaru[1].isPlaying()) {
-        	    		Medaru[1].pause();
-        	    	}
-        	    	if(Medaru[2].isPlaying()) {
-        	    		Medaru[2].pause();
-        	    	}
-        	    	if(Medaru[3].isPlaying()) {
-        	    		Medaru[3].pause();
-        	    	}
-        	    	if(Medaru[4].isPlaying()) {
-        				Medaru[4].pause();
-        	    	}
-        	    	if(Medaru[5].isPlaying()) {
-        				Medaru[5].pause();
-        	    	}
-        	    	if(Medaru[6].isPlaying()) {
-        				Medaru[6].pause();
-        	    	}
-        	    	if(Medaru[8].isPlaying()) {
-        				Medaru[8].pause();
-        	    	}
-        	    	if(Medaru[9].isPlaying()) {
-        				Medaru[9].pause();
-        	    	}
-        	    	if(Medaru[10].isPlaying()) {
-        				Medaru[10].pause();
-        	    	}
-        	    	if(Medaru[11].isPlaying()) {
-        				Medaru[11].pause();
-        	    	}
-        	    	if(Medaru[12].isPlaying()) {
-        				Medaru[12].pause();
-        	    	}
-        	    	if(Medaru[13].isPlaying()) {
-        				Medaru[13].pause();
-        	    	}
-        	    	if(Medaru[14].isPlaying()) {
-        				Medaru[14].pause();
-        	    	}
-        	    	if(taiki.isPlaying()) {
-        	    		taiki.pause();
-        	    	}
-        	    	Medaru[7].seekTo(0);
-        	    	Medaru[7].start();
-        	    	
-        	    	if(sentaku < 3) {
-        	    		sentakumedaru[sentaku] = 7;
-        	    		sentaku++;
-        	    	}else {
-        	    		sentakumedaru[0] = sentakumedaru[1];
-        	    		sentakumedaru[1] = sentakumedaru[2];
-        	    		sentakumedaru[2] = 7;
-        	    	}
-        	    	
-        	      }
+    	    	if(taiki.isPlaying()) {
+    	    		taiki.pause();
+    	    	}
+    	    	Medaru[7].seekTo(0);
+    	    	Medaru[7].start();
+    	    	
+    	    	if(sentaku < 3) {
+    	    		sentakumedaru[sentaku] = 7;
+    	    		sentaku++;
+    	    	}else {
+    	    		sentakumedaru[0] = sentakumedaru[1];
+    	    		sentakumedaru[1] = sentakumedaru[2];
+    	    		sentakumedaru[2] = 7;
+    	    	}
         	}
         });
         
         ImageButton batabutton = (ImageButton) findViewById(R.id.bata);
         batabutton.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) { 
-        		if (Medaru[8].isPlaying()) {
-        			Medaru[8].pause();
-        	      } else {
-        	    	if(Medaru[0].isPlaying()) {
-        	    		Medaru[0].pause();
-        	    	}
-        	    	if(Medaru[1].isPlaying()) {
-        	    		Medaru[1].pause();
-        	    	}
-        	    	if(Medaru[2].isPlaying()) {
-        	    		Medaru[2].pause();
-        	    	}
-        	    	if(Medaru[3].isPlaying()) {
-        	    		Medaru[3].pause();
-        	    	}
-        	    	if(Medaru[4].isPlaying()) {
-        				Medaru[4].pause();
-        	    	}
-        	    	if(Medaru[5].isPlaying()) {
-        				Medaru[5].pause();
-        	    	}
-        	    	if(Medaru[6].isPlaying()) {
-        				Medaru[6].pause();
-        	    	}
-        	    	if(Medaru[7].isPlaying()) {
-        				Medaru[7].pause();
-        	    	}
-        	    	if(Medaru[9].isPlaying()) {
-        				Medaru[9].pause();
-        	    	}
-        	    	if(Medaru[10].isPlaying()) {
-        				Medaru[10].pause();
-        	    	}
-        	    	if(Medaru[11].isPlaying()) {
-        				Medaru[11].pause();
-        	    	}
-        	    	if(Medaru[12].isPlaying()) {
-        				Medaru[12].pause();
-        	    	}
-        	    	if(Medaru[13].isPlaying()) {
-        				Medaru[13].pause();
-        	    	}
-        	    	if(Medaru[14].isPlaying()) {
-        				Medaru[14].pause();
-        	    	}
-        	    	if(taiki.isPlaying()) {
-        	    		taiki.pause();
-        	    	}
-        	    	Medaru[8].seekTo(0);
-        	    	Medaru[8].start();
-        	    	
-        	    	if(sentaku < 3) {
-        	    		sentakumedaru[sentaku] = 8;
-        	    		sentaku++;
-        	    	}else {
-        	    		sentakumedaru[0] = sentakumedaru[1];
-        	    		sentakumedaru[1] = sentakumedaru[2];
-        	    		sentakumedaru[2] = 8;
-        	    	}
-        	    	
-        	      }
+    	    	if(taiki.isPlaying()) {
+    	    		taiki.pause();
+    	    	}
+    	    	Medaru[8].seekTo(0);
+    	    	Medaru[8].start();
+    	    	
+    	    	if(sentaku < 3) {
+    	    		sentakumedaru[sentaku] = 8;
+    	    		sentaku++;
+    	    	}else {
+    	    		sentakumedaru[0] = sentakumedaru[1];
+    	    		sentakumedaru[1] = sentakumedaru[2];
+    	    		sentakumedaru[2] = 8;
+    	    	}
         	}
         });
         
         ImageButton saibutton = (ImageButton) findViewById(R.id.sai);
         saibutton.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) { 
-        		if (Medaru[9].isPlaying()) {
-        			Medaru[9].pause();
-        	      } else {
-        	    	if(Medaru[0].isPlaying()) {
-        	    		Medaru[0].pause();
-        	    	}
-        	    	if(Medaru[1].isPlaying()) {
-        	    		Medaru[1].pause();
-        	    	}
-        	    	if(Medaru[2].isPlaying()) {
-        	    		Medaru[2].pause();
-        	    	}
-        	    	if(Medaru[3].isPlaying()) {
-        	    		Medaru[3].pause();
-        	    	}
-        	    	if(Medaru[4].isPlaying()) {
-        				Medaru[4].pause();
-        	    	}
-        	    	if(Medaru[5].isPlaying()) {
-        				Medaru[5].pause();
-        	    	}
-        	    	if(Medaru[6].isPlaying()) {
-        				Medaru[6].pause();
-        	    	}
-        	    	if(Medaru[7].isPlaying()) {
-        				Medaru[7].pause();
-        	    	}
-        	    	if(Medaru[8].isPlaying()) {
-        				Medaru[8].pause();
-        	    	}
-        	    	if(Medaru[10].isPlaying()) {
-        				Medaru[10].pause();
-        	    	}
-        	    	if(Medaru[11].isPlaying()) {
-        				Medaru[11].pause();
-        	    	}
-        	    	if(Medaru[12].isPlaying()) {
-        				Medaru[12].pause();
-        	    	}
-        	    	if(Medaru[13].isPlaying()) {
-        				Medaru[13].pause();
-        	    	}
-        	    	if(Medaru[14].isPlaying()) {
-        				Medaru[14].pause();
-        	    	}
-        	    	if(taiki.isPlaying()) {
-        	    		taiki.pause();
-        	    	}
-        	    	Medaru[9].seekTo(0);
-        	    	Medaru[9].start();
-        	    	
-        	    	if(sentaku < 3) {
-        	    		sentakumedaru[sentaku] = 9;
-        	    		sentaku++;
-        	    	}else {
-        	    		sentakumedaru[0] = sentakumedaru[1];
-        	    		sentakumedaru[1] = sentakumedaru[2];
-        	    		sentakumedaru[2] = 9;
-        	    	}
-        	    	
-        	      }
+    	    	if(taiki.isPlaying()) {
+    	    		taiki.pause();
+    	    	}
+    	    	Medaru[9].seekTo(0);
+    	    	Medaru[9].start();
+    	    	
+    	    	if(sentaku < 3) {
+    	    		sentakumedaru[sentaku] = 9;
+    	    		sentaku++;
+    	    	}else {
+    	    		sentakumedaru[0] = sentakumedaru[1];
+    	    		sentakumedaru[1] = sentakumedaru[2];
+    	    		sentakumedaru[2] = 9;
+    	    	}
         	}
         });
         
         ImageButton gorirabutton = (ImageButton) findViewById(R.id.gorira);
         gorirabutton.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) { 
-        		if (Medaru[10].isPlaying()) {
-        			Medaru[10].pause();
-        	      } else {
-        	    	if(Medaru[0].isPlaying()) {
-        	    		Medaru[0].pause();
-        	    	}
-        	    	if(Medaru[1].isPlaying()) {
-        	    		Medaru[1].pause();
-        	    	}
-        	    	if(Medaru[2].isPlaying()) {
-        	    		Medaru[2].pause();
-        	    	}
-        	    	if(Medaru[3].isPlaying()) {
-        	    		Medaru[3].pause();
-        	    	}
-        	    	if(Medaru[4].isPlaying()) {
-        				Medaru[4].pause();
-        	    	}
-        	    	if(Medaru[5].isPlaying()) {
-        				Medaru[5].pause();
-        	    	}
-        	    	if(Medaru[6].isPlaying()) {
-        				Medaru[6].pause();
-        	    	}
-        	    	if(Medaru[7].isPlaying()) {
-        				Medaru[7].pause();
-        	    	}
-        	    	if(Medaru[8].isPlaying()) {
-        				Medaru[8].pause();
-        	    	}
-        	    	if(Medaru[9].isPlaying()) {
-        				Medaru[9].pause();
-        	    	}
-        	    	if(Medaru[11].isPlaying()) {
-        				Medaru[11].pause();
-        	    	}
-        	    	if(Medaru[12].isPlaying()) {
-        				Medaru[12].pause();
-        	    	}
-        	    	if(Medaru[13].isPlaying()) {
-        				Medaru[13].pause();
-        	    	}
-        	    	if(Medaru[14].isPlaying()) {
-        				Medaru[14].pause();
-        	    	}
-        	    	if(taiki.isPlaying()) {
-        	    		taiki.pause();
-        	    	}
-        	    	Medaru[10].seekTo(0);
-        	    	Medaru[10].start();
-        	    	
-        	    	if(sentaku < 3) {
-        	    		sentakumedaru[sentaku] = 10;
-        	    		sentaku++;
-        	    	}else {
-        	    		sentakumedaru[0] = sentakumedaru[1];
-        	    		sentakumedaru[1] = sentakumedaru[2];
-        	    		sentakumedaru[2] = 10;
-        	    	}
-        	    	
-        	      }
+    	    	if(taiki.isPlaying()) {
+    	    		taiki.pause();
+    	    	}
+    	    	Medaru[10].seekTo(0);
+    	    	Medaru[10].start();
+    	    	
+    	    	if(sentaku < 3) {
+    	    		sentakumedaru[sentaku] = 10;
+    	    		sentaku++;
+    	    	}else {
+    	    		sentakumedaru[0] = sentakumedaru[1];
+    	    		sentakumedaru[1] = sentakumedaru[2];
+    	    		sentakumedaru[2] = 10;
+    	    	}
         	}
         });
         
         ImageButton zoubutton = (ImageButton) findViewById(R.id.zou);
         zoubutton.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) { 
-        		if (Medaru[11].isPlaying()) {
-        			Medaru[11].pause();
-        	      } else {
-        	    	if(Medaru[0].isPlaying()) {
-        	    		Medaru[0].pause();
-        	    	}
-        	    	if(Medaru[1].isPlaying()) {
-        	    		Medaru[1].pause();
-        	    	}
-        	    	if(Medaru[2].isPlaying()) {
-        	    		Medaru[2].pause();
-        	    	}
-        	    	if(Medaru[3].isPlaying()) {
-        	    		Medaru[3].pause();
-        	    	}
-        	    	if(Medaru[4].isPlaying()) {
-        				Medaru[4].pause();
-        	    	}
-        	    	if(Medaru[5].isPlaying()) {
-        				Medaru[5].pause();
-        	    	}
-        	    	if(Medaru[6].isPlaying()) {
-        				Medaru[6].pause();
-        	    	}
-        	    	if(Medaru[7].isPlaying()) {
-        				Medaru[7].pause();
-        	    	}
-        	    	if(Medaru[8].isPlaying()) {
-        				Medaru[8].pause();
-        	    	}
-        	    	if(Medaru[9].isPlaying()) {
-        				Medaru[9].pause();
-        	    	}
-        	    	if(Medaru[10].isPlaying()) {
-        				Medaru[10].pause();
-        	    	}
-        	    	if(Medaru[12].isPlaying()) {
-        				Medaru[12].pause();
-        	    	}
-        	    	if(Medaru[13].isPlaying()) {
-        				Medaru[13].pause();
-        	    	}
-        	    	if(Medaru[14].isPlaying()) {
-        				Medaru[14].pause();
-        	    	}
-        	    	if(taiki.isPlaying()) {
-        	    		taiki.pause();
-        	    	}
-        	    	Medaru[11].seekTo(0);
-        	    	Medaru[11].start();
-        	    	
-        	    	if(sentaku < 3) {
-        	    		sentakumedaru[sentaku] = 11;
-        	    		sentaku++;
-        	    	}else {
-        	    		sentakumedaru[0] = sentakumedaru[1];
-        	    		sentakumedaru[1] = sentakumedaru[2];
-        	    		sentakumedaru[2] = 11;
-        	    	}
-        	    	
-        	      }
+    	    	if(taiki.isPlaying()) {
+    	    		taiki.pause();
+    	    	}
+    	    	Medaru[11].seekTo(0);
+    	    	Medaru[11].start();
+    	    	
+    	    	if(sentaku < 3) {
+    	    		sentakumedaru[sentaku] = 11;
+    	    		sentaku++;
+    	    	}else {
+    	    		sentakumedaru[0] = sentakumedaru[1];
+    	    		sentakumedaru[1] = sentakumedaru[2];
+    	    		sentakumedaru[2] = 11;
+    	    	}
         	}
         });
         
@@ -902,201 +341,123 @@ public class mainActivity extends Activity implements SensorListener{
         ImageButton sixyatibutton = (ImageButton) findViewById(R.id.sixyati);
         sixyatibutton.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) { 
-        		if (Medaru[12].isPlaying()) {
-        			Medaru[12].pause();
-        	      } else {
-        	    	if(Medaru[0].isPlaying()) {
-        	    		Medaru[0].pause();
-        	    	}
-        	    	if(Medaru[1].isPlaying()) {
-        	    		Medaru[1].pause();
-        	    	}
-        	    	if(Medaru[2].isPlaying()) {
-        	    		Medaru[2].pause();
-        	    	}
-        	    	if(Medaru[3].isPlaying()) {
-        	    		Medaru[3].pause();
-        	    	}
-        	    	if(Medaru[4].isPlaying()) {
-        				Medaru[4].pause();
-        	    	}
-        	    	if(Medaru[5].isPlaying()) {
-        				Medaru[5].pause();
-        	    	}
-        	    	if(Medaru[6].isPlaying()) {
-        				Medaru[6].pause();
-        	    	}
-        	    	if(Medaru[7].isPlaying()) {
-        				Medaru[7].pause();
-        	    	}
-        	    	if(Medaru[8].isPlaying()) {
-        				Medaru[8].pause();
-        	    	}
-        	    	if(Medaru[9].isPlaying()) {
-        				Medaru[9].pause();
-        	    	}
-        	    	if(Medaru[10].isPlaying()) {
-        				Medaru[10].pause();
-        	    	}
-        	    	if(Medaru[11].isPlaying()) {
-        				Medaru[11].pause();
-        	    	}
-        	    	if(Medaru[13].isPlaying()) {
-        				Medaru[13].pause();
-        	    	}
-        	    	if(Medaru[14].isPlaying()) {
-        				Medaru[14].pause();
-        	    	}
-        	    	if(taiki.isPlaying()) {
-        	    		taiki.pause();
-        	    	}
-        	    	Medaru[12].seekTo(0);
-        	    	Medaru[12].start();
-        	    	
-        	    	if(sentaku < 3) {
-        	    		sentakumedaru[sentaku] = 12;
-        	    		sentaku++;
-        	    	}else {
-        	    		sentakumedaru[0] = sentakumedaru[1];
-        	    		sentakumedaru[1] = sentakumedaru[2];
-        	    		sentakumedaru[2] = 12;
-        	    	}
-        	    	
-        	      }
+    	    	if(taiki.isPlaying()) {
+    	    		taiki.pause();
+    	    	}
+    	    	Medaru[12].seekTo(0);
+    	    	Medaru[12].start();
+    	    	
+    	    	if(sentaku < 3) {
+    	    		sentakumedaru[sentaku] = 12;
+    	    		sentaku++;
+    	    	}else {
+    	    		sentakumedaru[0] = sentakumedaru[1];
+    	    		sentakumedaru[1] = sentakumedaru[2];
+    	    		sentakumedaru[2] = 12;
+    	    	}
         	}
         });
         
         ImageButton unagibutton = (ImageButton) findViewById(R.id.unagi);
         unagibutton.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) { 
-        		if (Medaru[13].isPlaying()) {
-        			Medaru[13].pause();
-        	      } else {
-        	    	if(Medaru[0].isPlaying()) {
-        	    		Medaru[0].pause();
-        	    	}
-        	    	if(Medaru[1].isPlaying()) {
-        	    		Medaru[1].pause();
-        	    	}
-        	    	if(Medaru[2].isPlaying()) {
-        	    		Medaru[2].pause();
-        	    	}
-        	    	if(Medaru[3].isPlaying()) {
-        	    		Medaru[3].pause();
-        	    	}
-        	    	if(Medaru[4].isPlaying()) {
-        				Medaru[4].pause();
-        	    	}
-        	    	if(Medaru[5].isPlaying()) {
-        				Medaru[5].pause();
-        	    	}
-        	    	if(Medaru[6].isPlaying()) {
-        				Medaru[6].pause();
-        	    	}
-        	    	if(Medaru[7].isPlaying()) {
-        				Medaru[7].pause();
-        	    	}
-        	    	if(Medaru[8].isPlaying()) {
-        				Medaru[8].pause();
-        	    	}
-        	    	if(Medaru[9].isPlaying()) {
-        				Medaru[9].pause();
-        	    	}
-        	    	if(Medaru[10].isPlaying()) {
-        				Medaru[10].pause();
-        	    	}
-        	    	if(Medaru[12].isPlaying()) {
-        				Medaru[12].pause();
-        	    	}
-        	    	if(Medaru[11].isPlaying()) {
-        				Medaru[11].pause();
-        	    	}
-        	    	if(Medaru[14].isPlaying()) {
-        				Medaru[14].pause();
-        	    	}
-        	    	if(taiki.isPlaying()) {
-        	    		taiki.pause();
-        	    	}
-        	    	Medaru[13].seekTo(0);
-        	    	Medaru[13].start();
-        	    	
-        	    	if(sentaku < 3) {
-        	    		sentakumedaru[sentaku] = 13;
-        	    		sentaku++;
-        	    	}else {
-        	    		sentakumedaru[0] = sentakumedaru[1];
-        	    		sentakumedaru[1] = sentakumedaru[2];
-        	    		sentakumedaru[2] = 13;
-        	    	}
-        	    	
-        	      }
+    	    	if(taiki.isPlaying()) {
+    	    		taiki.pause();
+    	    	}
+    	    	Medaru[13].seekTo(0);
+    	    	Medaru[13].start();
+    	    	
+    	    	if(sentaku < 3) {
+    	    		sentakumedaru[sentaku] = 13;
+    	    		sentaku++;
+    	    	}else {
+    	    		sentakumedaru[0] = sentakumedaru[1];
+    	    		sentakumedaru[1] = sentakumedaru[2];
+    	    		sentakumedaru[2] = 13;
+    	    	}
         	}
         });
         
         ImageButton takobutton = (ImageButton) findViewById(R.id.tako);
         takobutton.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) { 
-        		if (Medaru[14].isPlaying()) {
-        			Medaru[14].pause();
-        	      } else {
-        	    	if(Medaru[0].isPlaying()) {
-        	    		Medaru[0].pause();
-        	    	}
-        	    	if(Medaru[1].isPlaying()) {
-        	    		Medaru[1].pause();
-        	    	}
-        	    	if(Medaru[2].isPlaying()) {
-        	    		Medaru[2].pause();
-        	    	}
-        	    	if(Medaru[3].isPlaying()) {
-        	    		Medaru[3].pause();
-        	    	}
-        	    	if(Medaru[4].isPlaying()) {
-        				Medaru[4].pause();
-        	    	}
-        	    	if(Medaru[5].isPlaying()) {
-        				Medaru[5].pause();
-        	    	}
-        	    	if(Medaru[6].isPlaying()) {
-        				Medaru[6].pause();
-        	    	}
-        	    	if(Medaru[7].isPlaying()) {
-        				Medaru[7].pause();
-        	    	}
-        	    	if(Medaru[8].isPlaying()) {
-        				Medaru[8].pause();
-        	    	}
-        	    	if(Medaru[9].isPlaying()) {
-        				Medaru[9].pause();
-        	    	}
-        	    	if(Medaru[10].isPlaying()) {
-        				Medaru[10].pause();
-        	    	}
-        	    	if(Medaru[12].isPlaying()) {
-        				Medaru[12].pause();
-        	    	}
-        	    	if(Medaru[13].isPlaying()) {
-        				Medaru[13].pause();
-        	    	}
-        	    	if(Medaru[11].isPlaying()) {
-        				Medaru[11].pause();
-        	    	}
-        	    	if(taiki.isPlaying()) {
-        	    		taiki.pause();
-        	    	}
-        	    	Medaru[14].seekTo(0);
-        	    	Medaru[14].start();
-        	    	
-        	    	if(sentaku < 3) {
-        	    		sentakumedaru[sentaku] = 14;
-        	    		sentaku++;
-        	    	}else {
-        	    		sentakumedaru[0] = sentakumedaru[1];
-        	    		sentakumedaru[1] = sentakumedaru[2];
-        	    		sentakumedaru[2] = 14;
-        	    	}
-        	    	
-        	      }
+    	    	if(taiki.isPlaying()) {
+    	    		taiki.pause();
+    	    	}
+    	    	Medaru[14].seekTo(0);
+    	    	Medaru[14].start();
+    	    	
+    	    	if(sentaku < 3) {
+    	    		sentakumedaru[sentaku] = 14;
+    	    		sentaku++;
+    	    	}else {
+    	    		sentakumedaru[0] = sentakumedaru[1];
+    	    		sentakumedaru[1] = sentakumedaru[2];
+    	    		sentakumedaru[2] = 14;
+    	    	}
+        	}
+        });
+        
+        
+        ImageButton puterabutton = (ImageButton) findViewById(R.id.putera);
+        puterabutton.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) { 
+    	    	if(taiki.isPlaying()) {
+    	    		taiki.pause();
+    	    	}
+    	    	Medaru[15].seekTo(0);
+    	    	Medaru[15].start();
+    	    	
+    	    	if(sentaku < 3) {
+    	    		sentakumedaru[sentaku] = 15;
+    	    		sentaku++;
+    	    	}else {
+    	    		sentakumedaru[0] = sentakumedaru[1];
+    	    		sentakumedaru[1] = sentakumedaru[2];
+    	    		sentakumedaru[2] = 15;
+    	    	}
+        	}
+        });
+        
+        
+        ImageButton torikerabutton = (ImageButton) findViewById(R.id.torikera);
+        torikerabutton.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) { 
+    	    	if(taiki.isPlaying()) {
+    	    		taiki.pause();
+    	    	}
+    	    	Medaru[16].seekTo(0);
+    	    	Medaru[16].start();
+    	    	
+    	    	if(sentaku < 3) {
+    	    		sentakumedaru[sentaku] = 16;
+    	    		sentaku++;
+    	    	}else {
+    	    		sentakumedaru[0] = sentakumedaru[1];
+    	    		sentakumedaru[1] = sentakumedaru[2];
+    	    		sentakumedaru[2] = 16;
+    	    	}
+        	}
+        });
+        
+        
+        ImageButton tiranobutton = (ImageButton) findViewById(R.id.tirano);
+        tiranobutton.setOnClickListener(new View.OnClickListener() {
+        	public void onClick(View view) { 
+    	    	if(taiki.isPlaying()) {
+    	    		taiki.pause();
+    	    	}
+    	    	Medaru[17].seekTo(0);
+    	    	Medaru[17].start();
+    	    	
+    	    	if(sentaku < 3) {
+    	    		sentakumedaru[sentaku] = 17;
+    	    		sentaku++;
+    	    	}else {
+    	    		sentakumedaru[0] = sentakumedaru[1];
+    	    		sentakumedaru[1] = sentakumedaru[2];
+    	    		sentakumedaru[2] = 17;
+    	    	}
         	}
         });
         
@@ -1104,57 +465,8 @@ public class mainActivity extends Activity implements SensorListener{
         ImageButton taikibutton = (ImageButton) findViewById(R.id.taiki);
         taikibutton.setOnClickListener(new View.OnClickListener() {
         	public void onClick(View view) { 
-        		if (taiki.isPlaying()) {
-        	        taiki.pause();
-        	      } else {
-        	    	if(Medaru[0].isPlaying()) {
-        	    		Medaru[0].pause();
-        	    	}
-        	    	if(Medaru[1].isPlaying()) {
-        	    		Medaru[1].pause();
-        	    	}
-        	    	if(Medaru[2].isPlaying()) {
-        	    		Medaru[2].pause();
-        	    	}
-        	    	if(Medaru[3].isPlaying()) {
-        	    		Medaru[3].pause();
-        	    	}
-        	    	if(Medaru[4].isPlaying()) {
-        	    		Medaru[4].pause();
-        	    	}
-        	    	if(Medaru[5].isPlaying()) {
-        				Medaru[5].pause();
-        	    	}
-        	    	if(Medaru[6].isPlaying()) {
-        				Medaru[6].pause();
-        	    	}
-        	    	if(Medaru[7].isPlaying()) {
-        				Medaru[7].pause();
-        	    	}
-        	    	if(Medaru[8].isPlaying()) {
-        				Medaru[8].pause();
-        	    	}
-        	    	if(Medaru[9].isPlaying()) {
-        				Medaru[9].pause();
-        	    	}
-        	    	if(Medaru[10].isPlaying()) {
-        				Medaru[10].pause();
-        	    	}
-        	    	if(Medaru[11].isPlaying()) {
-        				Medaru[11].pause();
-        	    	}
-        	    	if(Medaru[12].isPlaying()) {
-        				Medaru[12].pause();
-        	    	}
-        	    	if(Medaru[13].isPlaying()) {
-        				Medaru[13].pause();
-        	    	}
-        	    	if(Medaru[14].isPlaying()) {
-        				Medaru[14].pause();
-        	    	}
-        	    	taiki.seekTo(0);
-        	    	taiki.start();
-        	      }
+    	    	taiki.seekTo(0);
+    	    	taiki.start();
         	}
         });
         
@@ -1249,27 +561,27 @@ public class mainActivity extends Activity implements SensorListener{
     public void onSensorChanged(int sensor, float[] values) {
         switch(sensor) {
         case SensorManager.SENSOR_ACCELEROMETER:
-            // ŒX‚«iƒnƒCƒJƒbƒgj
+            // ï¿½Xï¿½ï¿½ï¿½iï¿½nï¿½Cï¿½Jï¿½bï¿½gï¿½j
             currentOrientationValues[0] = values[0] * 0.1f + currentOrientationValues[0] * (1.0f - 0.1f);
             currentOrientationValues[1] = values[1] * 0.1f + currentOrientationValues[1] * (1.0f - 0.1f);
             currentOrientationValues[2] = values[2] * 0.1f + currentOrientationValues[2] * (1.0f - 0.1f);
-            // ‰Á‘¬“xiƒ[ƒJƒbƒgj
+            // ï¿½ï¿½ï¿½ï¿½ï¿½xï¿½iï¿½ï¿½ï¿½[ï¿½Jï¿½bï¿½gï¿½j
             currentAccelerationValues[0] = values[0] - currentOrientationValues[0];
             currentAccelerationValues[1] = values[1] - currentOrientationValues[1];
             currentAccelerationValues[2] = values[2] - currentOrientationValues[2];
-            // U‚Á‚Ä‚éH@â‘Î’li‚ ‚é‚¢‚Í‚Qæ‚Ì•½•ûªj‚Ì‡Œv‚ª‚¢‚­‚ÂˆÈã‚©H
-            // À‘•—á
+            // ï¿½Uï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Hï¿½@ï¿½ï¿½ï¿½Î’lï¿½iï¿½ï¿½ï¿½é‚¢ï¿½Í‚Qï¿½ï¿½ï¿½Ì•ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½jï¿½Ìï¿½ï¿½vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÂˆÈã‚©ï¿½H
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             float targetValue = 
                 Math.abs(currentAccelerationValues[0]) + 
                 Math.abs(currentAccelerationValues[1]) +
                 Math.abs(currentAccelerationValues[2]);
             if(targetValue > 30.0f) {
-            	//U‚Á‚Ä‚é‚Ìˆ—
+            	//ï¿½Uï¿½ï¿½ï¿½Ä‚éï¿½Ìï¿½ï¿½ï¿½
             	
             	if(taiki.isPlaying()) {
             		taiki.stop();
             		
-            		//‚±‚ê‚ğ‘‚©‚È‚¢‚ÆÄ’è‹`‚µ‚È‚¢‚ÆÄ¶‚³‚ê‚È‚­‚È‚é
+            		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½ÆÄ’ï¿½ï¿½`ï¿½ï¿½ï¿½È‚ï¿½ï¿½ÆÄï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½È‚ï¿½
             		try {
 						taiki.prepare();
 					} catch (IllegalStateException e1) {
@@ -1304,7 +616,7 @@ public class mainActivity extends Activity implements SensorListener{
             		}
             		*/
             		
-            		//ƒXƒLƒƒƒjƒ“ƒO‚¶‚á‚È‚¢‚Æ‚«‚¾‚¯
+            		//ï¿½Xï¿½Lï¿½ï¿½ï¿½jï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½ï¿½
             		if(flag == 0) {
             			try {
             				Medaru[sentakumedaru[0]].start();
@@ -1333,7 +645,9 @@ public class mainActivity extends Activity implements SensorListener{
             			
             			if(flag == 1) {
             				try {
-            					scaningk.start();
+            					//scaningk.start();
+        						hensin = MediaPlayer.create(this,R.raw.tajadoruscaning);
+        						hensin.start();
             					flag = 3;
             				}catch (Exception e) {
             					
@@ -1356,7 +670,9 @@ public class mainActivity extends Activity implements SensorListener{
             				|| (sentakumedaru[0] == 5 && sentakumedaru[1] == 3 && sentakumedaru[2] == 4)) {
             			if(flag == 1) {
             				try {
-            					scaningk.start();
+            					//scaningk.start();
+        						hensin = MediaPlayer.create(this,R.raw.ratoratascaning);
+        						hensin.start();
             					flag = 3;
             				}catch (Exception e) {
             					
@@ -1379,7 +695,9 @@ public class mainActivity extends Activity implements SensorListener{
             			
             			if(flag == 1) {
             				try {
-            					scaningk.start();
+            					//scaningk.start();
+        						hensin = MediaPlayer.create(this,R.raw.gatakiribascaning);
+        						hensin.start();
             					flag = 3;
             				}catch (Exception e) {
             					
@@ -1402,8 +720,10 @@ public class mainActivity extends Activity implements SensorListener{
             			
             			if(flag == 1) {
             				try {
-            					scaningk.start();
-            					flag = 3;
+            					//scaningk.start();
+        						hensin = MediaPlayer.create(this,R.raw.sagozoscaning);
+        						hensin.start();
+             					flag = 3;
             				}catch (Exception e) {
             					
             				}
@@ -1425,7 +745,9 @@ public class mainActivity extends Activity implements SensorListener{
             			
             			if(flag == 1) {
             				try {
-            					scaningk.start();
+            					//scaningk.start();
+        						hensin = MediaPlayer.create(this,R.raw.tatobascaning);
+        						hensin.start();
             					flag = 3;
             				}catch (Exception e) {
             					
@@ -1448,7 +770,9 @@ public class mainActivity extends Activity implements SensorListener{
             			
             			if(flag == 1) {
             				try {
-            					scaningk.start();
+            					//scaningk.start();
+        						hensin = MediaPlayer.create(this,R.raw.sixyautascaning);
+        						hensin.start();
             					flag = 3;
             				}catch (Exception e) {
             					
@@ -1462,14 +786,47 @@ public class mainActivity extends Activity implements SensorListener{
             					
             				}
             			}
-            		}else {
-        				try {
-    						hensin = MediaPlayer.create(this,R.raw.publichensin);
-    						hensin.start();
-        				}catch (Exception e) {
-        					
-        				}
-        			}
+            		}else if((sentakumedaru[0] == 15 && sentakumedaru[1] == 16 && sentakumedaru[2] == 17)
+            				|| (sentakumedaru[0] == 15 && sentakumedaru[1] == 17 && sentakumedaru[2] == 16)
+            				|| (sentakumedaru[0] == 16 && sentakumedaru[1] == 15 && sentakumedaru[2] == 17)
+            				|| (sentakumedaru[0] == 16 && sentakumedaru[1] == 17 && sentakumedaru[2] == 15)
+            				|| (sentakumedaru[0] == 17 && sentakumedaru[1] == 15 && sentakumedaru[2] == 16)
+            				|| (sentakumedaru[0] == 17 && sentakumedaru[1] == 16 && sentakumedaru[2] == 15)) {
+            			
+            			if(flag == 1) {
+            				try {
+            					//scaningk.start();
+        						hensin = MediaPlayer.create(this,R.raw.putotirascaning);
+        						hensin.start();
+            					flag = 3;
+            				}catch (Exception e) {
+            					
+            				}
+            				
+            			}else {
+            				try {
+        						hensin = MediaPlayer.create(this,R.raw.putotira);
+        						hensin.start();
+            				}catch (Exception e) {
+            					
+            				}
+            			}
+            		}else if(flag == 1) {
+            				try {
+            					scaningk.start();
+            					flag = 3;
+            				}catch (Exception e) {
+            					
+            				}
+            				
+            			}else {
+            				try {
+        						hensin = MediaPlayer.create(this,R.raw.publichensin);
+        						hensin.start();
+            				}catch (Exception e) {
+            					
+            				}
+            			}
                     
                     
                     
@@ -1483,20 +840,20 @@ public class mainActivity extends Activity implements SensorListener{
             	
             }
             else if(targetValue < 10.0f) {
-            	//U‚Á‚Ä‚È‚¢‚Ìˆ—
+            	//ï¿½Uï¿½ï¿½ï¿½Ä‚È‚ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½
             	
             	
             }
-            // ‚©‚½‚Ş‚«‚ÍH‚R‚Â‚Ìâ‘Î’li‚ ‚é‚¢‚Í‚Qæ‚Ì•½•ûªj‚Ì‚¤‚¿‚Ç‚ê‚ª‚¢‚¿‚Î‚ñ‚Å‚©‚¢‚©H
-            // À‘•—á
+            // ï¿½ï¿½ï¿½ï¿½ï¿½Ş‚ï¿½ï¿½ÌHï¿½Rï¿½Â‚Ìï¿½ï¿½Î’lï¿½iï¿½ï¿½ï¿½é‚¢ï¿½Í‚Qï¿½ï¿½ï¿½Ì•ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½jï¿½Ì‚ï¿½ï¿½ï¿½ï¿½Ç‚ê‚ªï¿½ï¿½ï¿½ï¿½ï¿½Î‚ï¿½ï¿½Å‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½H
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             if(Math.abs(currentOrientationValues[0]) > 7.0f) {
-                //‰¡‚ğŒü‚¢‚Ä‚¢‚é‚Ìˆ—
+                //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½éï¿½Ìï¿½ï¿½ï¿½
             } else if(Math.abs(currentOrientationValues[1]) > 7.0f) {
-                //c‚ğŒü‚¢‚Ä‚¢‚é‚Ìˆ—
+                //ï¿½cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½éï¿½Ìï¿½ï¿½ï¿½
             } else if(Math.abs(currentOrientationValues[2]) > 7.0f) {
-                //…•½‚ğŒü‚¢‚Ä‚¢‚é‚Ìˆ—
+                //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½éï¿½Ìï¿½ï¿½ï¿½
             } else {
-                //‚»‚Ì‘¼‚Ì
+                //ï¿½ï¿½ï¿½Ì‘ï¿½ï¿½Ìï¿½
             }
             
             if(targetValue > 30.0f && Math.abs(currentOrientationValues[0]) > 1.5f && 
@@ -1508,14 +865,14 @@ public class mainActivity extends Activity implements SensorListener{
             }
             break;
         case SensorManager.SENSOR_ORIENTATION:
-        	//ŒX‚«‚¾‚¯‚ÌH
+        	//ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½H
             break;
         default:
         }
     }
     
     public void onAccuracyChanged(int sensor, int accuracy) {
-        //‚±‚ê‚ğÀ‘•‚µ‚Ä‚¢‚È‚¢‚ÆAƒGƒ‰[‚ª‚Í‚©‚ê‚é
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½È‚ï¿½ï¿½ÆAï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Í‚ï¿½ï¿½ï¿½ï¿½ï¿½
     }
     
     
