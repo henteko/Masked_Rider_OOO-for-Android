@@ -561,27 +561,27 @@ public class mainActivity extends Activity implements SensorListener{
     public void onSensorChanged(int sensor, float[] values) {
         switch(sensor) {
         case SensorManager.SENSOR_ACCELEROMETER:
-            // ï¿½Xï¿½ï¿½ï¿½iï¿½nï¿½Cï¿½Jï¿½bï¿½gï¿½j
+            // ŒX‚«iƒnƒCƒJƒbƒgj
             currentOrientationValues[0] = values[0] * 0.1f + currentOrientationValues[0] * (1.0f - 0.1f);
             currentOrientationValues[1] = values[1] * 0.1f + currentOrientationValues[1] * (1.0f - 0.1f);
             currentOrientationValues[2] = values[2] * 0.1f + currentOrientationValues[2] * (1.0f - 0.1f);
-            // ï¿½ï¿½ï¿½ï¿½ï¿½xï¿½iï¿½ï¿½ï¿½[ï¿½Jï¿½bï¿½gï¿½j
+            // ‰Á‘¬“xiƒ[ƒJƒbƒgj
             currentAccelerationValues[0] = values[0] - currentOrientationValues[0];
             currentAccelerationValues[1] = values[1] - currentOrientationValues[1];
             currentAccelerationValues[2] = values[2] - currentOrientationValues[2];
-            // ï¿½Uï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Hï¿½@ï¿½ï¿½ï¿½Î’lï¿½iï¿½ï¿½ï¿½é‚¢ï¿½Í‚Qï¿½ï¿½ï¿½Ì•ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½jï¿½Ìï¿½ï¿½vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÂˆÈã‚©ï¿½H
-            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            // U‚Á‚Ä‚éH@â‘Î’li‚ ‚é‚¢‚Í‚Qæ‚Ì•½•ûªj‚Ì‡Œv‚ª‚¢‚­‚ÂˆÈã‚©H
+            // À‘•—á
             float targetValue = 
                 Math.abs(currentAccelerationValues[0]) + 
                 Math.abs(currentAccelerationValues[1]) +
                 Math.abs(currentAccelerationValues[2]);
             if(targetValue > 30.0f) {
-            	//ï¿½Uï¿½ï¿½ï¿½Ä‚éï¿½Ìï¿½ï¿½ï¿½
+            	//U‚Á‚Ä‚é‚Ìˆ—
             	
             	if(taiki.isPlaying()) {
             		taiki.stop();
             		
-            		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½ÆÄ’ï¿½ï¿½`ï¿½ï¿½ï¿½È‚ï¿½ï¿½ÆÄï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½È‚ï¿½
+            		//‚±‚ê‚ğ‘‚©‚È‚¢‚ÆÄ’è‹`‚µ‚È‚¢‚ÆÄ¶‚³‚ê‚È‚­‚È‚é
             		try {
 						taiki.prepare();
 					} catch (IllegalStateException e1) {
@@ -616,7 +616,7 @@ public class mainActivity extends Activity implements SensorListener{
             		}
             		*/
             		
-            		//ï¿½Xï¿½Lï¿½ï¿½ï¿½jï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½ï¿½
+            		//ƒXƒLƒƒƒjƒ“ƒO‚¶‚á‚È‚¢‚Æ‚«‚¾‚¯
             		if(flag == 0) {
             			try {
             				Medaru[sentakumedaru[0]].start();
@@ -840,20 +840,20 @@ public class mainActivity extends Activity implements SensorListener{
             	
             }
             else if(targetValue < 10.0f) {
-            	//ï¿½Uï¿½ï¿½ï¿½Ä‚È‚ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½
+            	//U‚Á‚Ä‚È‚¢‚Ìˆ—
             	
             	
             }
-            // ï¿½ï¿½ï¿½ï¿½ï¿½Ş‚ï¿½ï¿½ÌHï¿½Rï¿½Â‚Ìï¿½ï¿½Î’lï¿½iï¿½ï¿½ï¿½é‚¢ï¿½Í‚Qï¿½ï¿½ï¿½Ì•ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½jï¿½Ì‚ï¿½ï¿½ï¿½ï¿½Ç‚ê‚ªï¿½ï¿½ï¿½ï¿½ï¿½Î‚ï¿½ï¿½Å‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½H
-            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            // ‚©‚½‚Ş‚«‚ÍH‚R‚Â‚Ìâ‘Î’li‚ ‚é‚¢‚Í‚Qæ‚Ì•½•ûªj‚Ì‚¤‚¿‚Ç‚ê‚ª‚¢‚¿‚Î‚ñ‚Å‚©‚¢‚©H
+            // À‘•—á
             if(Math.abs(currentOrientationValues[0]) > 7.0f) {
-                //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½éï¿½Ìï¿½ï¿½ï¿½
+                //‰¡‚ğŒü‚¢‚Ä‚¢‚é‚Ìˆ—
             } else if(Math.abs(currentOrientationValues[1]) > 7.0f) {
-                //ï¿½cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½éï¿½Ìï¿½ï¿½ï¿½
+                //c‚ğŒü‚¢‚Ä‚¢‚é‚Ìˆ—
             } else if(Math.abs(currentOrientationValues[2]) > 7.0f) {
-                //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½éï¿½Ìï¿½ï¿½ï¿½
+                //…•½‚ğŒü‚¢‚Ä‚¢‚é‚Ìˆ—
             } else {
-                //ï¿½ï¿½ï¿½Ì‘ï¿½ï¿½Ìï¿½
+                //‚»‚Ì‘¼‚Ì
             }
             
             if(targetValue > 30.0f && Math.abs(currentOrientationValues[0]) > 1.5f && 
@@ -865,14 +865,14 @@ public class mainActivity extends Activity implements SensorListener{
             }
             break;
         case SensorManager.SENSOR_ORIENTATION:
-        	//ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½H
+        	//ŒX‚«‚¾‚¯‚ÌH
             break;
         default:
         }
     }
     
     public void onAccuracyChanged(int sensor, int accuracy) {
-        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½È‚ï¿½ï¿½ÆAï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Í‚ï¿½ï¿½ï¿½ï¿½ï¿½
+        //‚±‚ê‚ğÀ‘•‚µ‚Ä‚¢‚È‚¢‚ÆAƒGƒ‰[‚ª‚Í‚©‚ê‚é
     }
     
     
