@@ -32,6 +32,11 @@
                 <ImageButton android:src="@drawable/tako" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/tako" android:background="@null"></ImageButton>
             </TableRow>
             <TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageButton android:src="@drawable/putera" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/putera" android:background="@null"></ImageButton>
+                <ImageButton android:src="@drawable/torikera" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/torikera" android:background="@null"></ImageButton>
+                <ImageButton android:src="@drawable/tirano" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/tirano" android:background="@null"></ImageButton>
+            </TableRow>
+            <TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content" android:layout_height="wrap_content">
             	<TextView android:text="" android:id="@+id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
                 <ImageButton android:src="@drawable/scana" android:layout_height="wrap_content" android:layout_width="fill_parent" android:id="@+id/taiki" android:background="@null"></ImageButton>
             </TableRow>
